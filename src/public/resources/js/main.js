@@ -29,6 +29,7 @@ document.getElementById('item').addEventListener('keydown', function (e) {
 function addItem (value) {
   addItemToDOM(value);
   document.getElementById('item').value = '';
+  sendItemToApi(value);
 
   data.todo.push(value);
   dataObjectUpdated();
@@ -119,4 +120,9 @@ function addItemToDOM(text, completed) {
   item.appendChild(buttons);
 
   list.insertBefore(item, list.childNodes[0]);
+}
+
+function sendItemToApi (item) {
+ const req = fetch('post', './add')
+ req.open
 }
